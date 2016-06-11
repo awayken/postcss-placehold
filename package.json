@@ -1,6 +1,6 @@
 {
   "name": "postcss-placehold",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "PostCSS plugin that makes it easy to drop in placeholder images.",
   "main": "index.js",
   "scripts": {
