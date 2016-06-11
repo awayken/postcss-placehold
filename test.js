@@ -3,12 +3,48 @@ var postcss = require('postcss');
 var plugin = require('./');
 var name = require('./package.json').name;
 
-var tests = [{
-    message: 'should transform css',
-    fixture: 'h1 { color: red }',
-    expected: 'h1 { color: red }',
-    options: {foo: true}
-}];
+var tests = [
+    {
+        message: 'should add placeholder',
+        fixture: 'h1 { background: placehold(400, 400); }',
+        expected: 'h1 { background: url("https://placehold.it/400x400"); }',
+        options: {}
+    },
+    {
+        message: 'should ignore whitespace placeholder',
+        fixture: 'h1 { background: placehold(    400    ,    400    ); }',
+        expected: 'h1 { background: url("https://placehold.it/400x400"); }',
+        options: {}
+    },
+    {
+        message: 'should fail with only width',
+        fixture: 'h1 { background: placehold(400); }',
+        expected: 'h1 { background: placehold(400); }',
+        options: {}
+    },
+    {
+        message: 'should fail with no width or height',
+        fixture: 'h1 { background: placehold(); }',
+        expected: 'h1 { background: placehold(); }',
+        options: {}
+    },
+    {
+        message: 'should add kitten placeholder',
+        fixture: 'h1 { background: placehold(400, 400); }',
+        expected: 'h1 { background: url("https://placekitten.com/400/400"); }',
+        options: {
+            service: 'placekitten'
+        }
+    },
+    {
+        message: 'should prefer placehold.it placeholder',
+        fixture: 'h1 { background: placehold(400, 400); }',
+        expected: 'h1 { background: url("https://placehold.it/400x400"); }',
+        options: {
+            service: 'fakeservice'
+        }
+    }
+];
 
 function process (css, options) {
     return postcss(plugin(options)).process(css).css;

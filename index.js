@@ -2,10 +2,31 @@
 
 var postcss = require('postcss');
 
+var getPlaceholdURL = function( width, height, service ) {
+    if ( service === 'placekitten' ) {
+        return 'https://placekitten.com/' + width + '/' + height;
+    } else {
+        return 'https://placehold.it/' + width + 'x' + height;
+    }
+};
+
 module.exports = postcss.plugin('postcss-placehold', function (opts) {
-    opts = opts || {};
+    opts = opts || {
+        service: 'placeholdit'
+    };
 
     return function (css) {
-        // Plugin logic goes here
+        css.walkDecls(function ( decl ) {
+            var REplaceholder = /placehold\((.+),(.+)\)/;
+            var valueMatch = decl.value.match( REplaceholder );
+
+            if ( valueMatch ) {
+                var width = valueMatch[1].replace(/ +/g, '');
+                var height = valueMatch[2].replace(/ +/g, '');
+
+                var imageURL = getPlaceholdURL( width, height, opts.service );
+                decl.value = 'url("' + imageURL + '")';
+            }
+        });
     };
 });

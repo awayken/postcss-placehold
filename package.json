@@ -24,6 +24,6 @@
   },
   "repository": "awayken/postcss-placehold",
   "dependencies": {
-    "postcss": "^4.1.11"
+    "postcss": "^5.0.21"
   }
 }
