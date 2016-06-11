@@ -1,0 +1,29 @@
+{
+  "name": "postcss-placehold",
+  "version": "0.0.0",
+  "description": "PostCSS plugin that makes it easy to drop in placeholder images.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js | tap-spec"
+  },
+  "keywords": [
+    "css",
+    "postcss",
+    "postcss-plugin"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "tap-spec": "^2.2.2",
+    "tape": "^3.5.0"
+  },
+  "homepage": "https://github.com/awayken/postcss-placehold",
+  "author": {
+    "name": "Miles Rausch",
+    "email": "miles@milesrausch.com",
+    "url": "https://github.com/awayken/postcss-placehold"
+  },
+  "repository": "awayken/postcss-placehold",
+  "dependencies": {
+    "postcss": "^4.1.11"
+  }
+}
