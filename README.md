@@ -1,6 +1,6 @@
-# [postcss][postcss]-placehold [![Build Status](https://travis-ci.org/awayken/postcss-placehold.svg?branch=master)][ci] [![NPM version](https://badge.fury.io/js/postcss-placehold.svg)][npm] [![Dependency Status](https://gemnasium.com/awayken/postcss-placehold.svg)][deps]
+# postcss-placehold [![Build Status](https://travis-ci.org/awayken/postcss-placehold.svg?branch=master)][ci] [![NPM version](https://badge.fury.io/js/postcss-placehold.svg)][npm]
 
-> PostCSS plugin that makes it easy to drop in placeholder images.
+> [PostCSS] plugin that makes it easy to drop in placeholder images.
 
 ## Install
 
@@ -16,35 +16,32 @@ npm install postcss-placehold --save
 
 ```css
 h1 {
-    color: red;
+    background: placehold(400, 400);
 }
 ```
 
 ### Output
 
 ```css
-h1{color:red}
+h1 {
+    background: url("https://placehold.it/400x400");
+}
 ```
 
-## API
+## Options
 
-### placehold([options])
+### options.service
 
-#### options
+Type: `string`
+Default: `placeholdit`
 
-##### foo
+Define which placeholder service to use for your images.
 
-Type: `boolean`
-Default: `true`
+Supported services:
 
-Description of what it does. An example:
+  * [placehold.it](https://placehold.it)
+  * [placekitten](https://placekitten.com)
 
-```js
-var css = 'h1 { color: red }';
-console.log(postcss([ require('postcss-placehold')({foo: true}) ]).process(css).css);
-
-// => 'h1{color:red}'
-```
 
 ## Usage
 
@@ -61,6 +58,5 @@ to cover it.
 MIT © [Miles Rausch](https://github.com/awayken/postcss-placehold)
 
 [ci]:      https://travis-ci.org/awayken/postcss-placehold
-[deps]:    https://gemnasium.com/awayken/postcss-placehold
 [npm]:     http://badge.fury.io/js/postcss-placehold
 [postcss]: https://github.com/postcss/postcss
