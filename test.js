@@ -11,6 +11,12 @@ var tests = [
         options: {}
     },
     {
+        message: 'should maintain declaration values',
+        fixture: 'h1 { background: #000 placehold(400, 400) no-repeat top center; }',
+        expected: 'h1 { background: #000 url("https://placehold.it/400x400") no-repeat top center; }',
+        options: {}
+    },
+    {
         message: 'should ignore whitespace placeholder',
         fixture: 'h1 { background: placehold(    400    ,    400    ); }',
         expected: 'h1 { background: url("https://placehold.it/400x400"); }',

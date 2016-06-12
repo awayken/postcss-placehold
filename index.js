@@ -25,7 +25,7 @@ module.exports = postcss.plugin('postcss-placehold', function (opts) {
                 var height = valueMatch[2].replace(/ +/g, '');
 
                 var imageURL = getPlaceholdURL( width, height, opts.service );
-                decl.value = 'url("' + imageURL + '")';
+                decl.value = decl.value.replace( valueMatch[0], 'url("' + imageURL + '")' );
             }
         });
     };
