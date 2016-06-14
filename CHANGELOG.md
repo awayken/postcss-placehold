@@ -1,6 +1,7 @@
 # 1.2.0
 
 * Added grayscale placekitten (service: placekittengray)
+* Added dummyimage service (service: dummyimage)
 
 # 1.1.0
 

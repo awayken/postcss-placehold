@@ -51,6 +51,14 @@ var tests = [
         }
     },
     {
+        message: 'should add dummyimage placeholder',
+        fixture: 'h1 { background: placehold(400, 400); }',
+        expected: 'h1 { background: url("https://dummyimage.com/400x400"); }',
+        options: {
+            service: 'dummyimage'
+        }
+    },
+    {
         message: 'should prefer placehold.it placeholder',
         fixture: 'h1 { background: placehold(400, 400); }',
         expected: 'h1 { background: url("https://placehold.it/400x400"); }',
