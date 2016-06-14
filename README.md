@@ -41,6 +41,7 @@ Supported services:
 
   * [placehold.it](https://placehold.it)
   * [placekitten](https://placekitten.com)
+  * [placekittengray](https://placekitten.com)
 
 
 ## Usage

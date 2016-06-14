@@ -5,6 +5,8 @@ var postcss = require('postcss');
 var getPlaceholdURL = function( width, height, service ) {
     if ( service === 'placekitten' ) {
         return 'https://placekitten.com/' + width + '/' + height;
+    } else if ( service === 'placekittengray' ) {
+        return 'https://placekitten.com/g/' + width + '/' + height;
     } else {
         return 'https://placehold.it/' + width + 'x' + height;
     }

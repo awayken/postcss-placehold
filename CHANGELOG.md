@@ -1,3 +1,7 @@
+# 1.2.0
+
+* Added grayscale placekitten (service: placekittengray)
+
 # 1.1.0
 
 * Fixed an issue where plugin was wiping out the entire value for this stupid replacement.

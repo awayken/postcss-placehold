@@ -43,6 +43,14 @@ var tests = [
         }
     },
     {
+        message: 'should add grayscale kitten placeholder',
+        fixture: 'h1 { background: placehold(400, 400); }',
+        expected: 'h1 { background: url("https://placekitten.com/g/400/400"); }',
+        options: {
+            service: 'placekittengray'
+        }
+    },
+    {
         message: 'should prefer placehold.it placeholder',
         fixture: 'h1 { background: placehold(400, 400); }',
         expected: 'h1 { background: url("https://placehold.it/400x400"); }',
