@@ -9,7 +9,7 @@ var getPlaceholdURL = function( width, height, service ) {
         return 'https://placekitten.com/g/' + width + '/' + height;
     } else if ( service === 'dummyimage' ) {
         return 'https://dummyimage.com/' + width + 'x' + height;
-    } else {
+    } else if ( service === 'placeholdit' ) {
         return 'https://placehold.it/' + width + 'x' + height;
     } else {
         return service + width + 'x' + height;
