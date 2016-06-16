@@ -44,6 +44,7 @@ Supported services:
   * [placekittengray](https://placekitten.com)
   * [dummyimage](https://dummyimage.com)
 
+Also you can use custom service.
 
 ## Usage
 
