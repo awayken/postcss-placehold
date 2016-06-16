@@ -11,6 +11,8 @@ var getPlaceholdURL = function( width, height, service ) {
         return 'https://dummyimage.com/' + width + 'x' + height;
     } else {
         return 'https://placehold.it/' + width + 'x' + height;
+    } else {
+        return service + width + 'x' + height;
     }
 };
 
