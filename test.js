@@ -59,11 +59,11 @@ var tests = [
         }
     },
     {
-        message: 'should prefer placehold.it placeholder',
+        message: 'should add custom placeholder',
         fixture: 'h1 { background: placehold(400, 400); }',
-        expected: 'h1 { background: url("https://placehold.it/400x400"); }',
+        expected: 'h1 { background: url("https://example.com/400x400"); }',
         options: {
-            service: 'fakeservice'
+            service: 'https://example.com/'
         }
     }
 ];
