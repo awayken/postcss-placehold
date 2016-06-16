@@ -17,9 +17,8 @@ var getPlaceholdURL = function( width, height, service ) {
 };
 
 module.exports = postcss.plugin('postcss-placehold', function (opts) {
-    opts = opts || {
-        service: 'placeholdit'
-    };
+    opts = opts || {};
+    opts.service = opts.service || 'placeholdit';
 
     return function (css) {
         css.walkDecls(function ( decl ) {
